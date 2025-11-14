@@ -5,13 +5,14 @@ const cvData = {
         { name: 'Strategic Planning', level: 100 },
         { name: 'Budget Management', level: 100 },
         { name: 'Academic Research', level: 100 },
-        { name: 'Team Leadership', level: 100 }
+        { name: 'Team Leadership', level: 100 },
+         { name: 'Trainer', level: 100 }
     ],
 
     experience: [
         {
             title: 'Operations Manager',
-            date: 'Jan 2020 - Present',
+            date: 'Jan 2023 - Present',
             company: 'Natah Investment Limited | Financial Services',
             skills: ['Strategic Planning', 'Budget Management', 'Team Leadership', 'Process Improvement', 'Digital Transformation'],
             achievements: [
@@ -24,7 +25,7 @@ const cvData = {
         },
         {
             title: 'Part-time Lecturer & Research Associate',
-            date: 'Feb 2017 - Dec 2019',
+            date: 'Feb 2017 - Date',
             company: 'University of Embu / Rongo University | Higher Education',
             skills: ['Curriculum Development', 'Academic Research', 'Student Mentoring', 'Publication', 'Industry Engagement'],
             achievements: [
@@ -32,7 +33,20 @@ const cvData = {
                 'Mentored 150+ students through academic research projects and industry placements, with 85% achieving distinction grades',
                 'Published peer-reviewed research in International Journal of Social Sciences, contributing to academic discourse on dividend policies',
                 'Developed innovative assessment methods that improved learning outcomes by 25% compared to traditional examination approaches',
+                'Experience managing educational content via Learning Management Systems (LMS) and updating web content using basic CMS platforms.',
                 'Collaborated with industry partners to integrate real-world case studies into coursework, enhancing practical application'
+            ]
+        },
+        {
+            title: 'Supervisor/ Credit Administrator',
+            date: 'Feb 2018 - Dec 2022',
+            company: 'Itoleka FSA (Financial Services Association)',
+            skills: ['Leadership & Team Management', 'Financial Portfolio Management', 'Risk Management', 'Training & Development (Sales)', 'Collections & Negotiation'],
+            achievements: [
+                'Supervising a portfolio of 52 Million with 4 Loan officers under me, achieving a 98% loan recovery rate over 3 years',
+                'Ensured timely collection of loan repayments by implementing proactive follow-up strategies, significantly minimizing portfolio-at-risk.',
+                'Mobilized and trained new members on a full range of FSA products and services, driving client acquisition and product adoption.',
+                'Managed the complete default process, from following up on late repayments to executing the full loan recovery from defaulting accounts.'
             ]
         },
         {
@@ -62,7 +76,40 @@ const cvData = {
             date: '2010 - 2014',
             institution: 'Masinde Muliro University of Science and Technology, Kenya',
             details: 'Second Class Honors, Upper Division'
+        },
+        {
+            degree: 'Kenya Certificate of Secondary Education',
+            date: '2006-2009',
+            institution: 'Lenana School, Nairobi, Kenya',
+            details: 'B - Plain'
         }
+    ],
+     professional: [
+    {
+        qualification: 'CPA Section 3',
+        date: '',
+        details: 'Advanced Financial Accounting, Financial Management, Management Accounting, and Auditing & Assurance'
+    },
+    {
+        qualification: 'Computer Application Packages',
+        institution: '',
+        date: '',
+        details: 'Microsoft Office Suite (Word, Excel, PowerPoint, Outlook), Database Management, Internet Applications'
+    },
+    {
+        qualification: 'QuickBooks Training',
+        details: 'Financial reporting, accounts payable/receivable, inventory management, payroll processing'
+    },
+    {
+        qualification: 'Research Methodology',
+        institution: '',
+        date: '',
+        details: 'Quantitative and qualitative research methods, data collection and analysis, statistical tools, research design, and academic writing'
+    },
+    {
+        qualification: 'SPSS Training',
+        details: 'Data analysis, descriptive and inferential statistics, hypothesis testing, regression analysis, and data visualization'
+    }
     ],
 
     references: [
@@ -74,10 +121,10 @@ const cvData = {
             email: 'jmwau84@gmail.com'
         },
         {
-            name: 'Mr. Ronald Wambua Matheka',
-            position: 'Business Relationship Officer',
-            company: 'Co-operative Bank, Mwingi',
-            email: 'mathekaronald@gmail.com'
+            name: 'Ms. Maureen Mwende Titus,',
+            position: 'Branch Manager,',
+            company: 'Itoleka FSA Ltd - Kitui Branch',
+            email: 'titusmwende17@gmail.com'
         },
         {
             name: 'Mr. Dan Ajenga',
@@ -160,6 +207,19 @@ function renderEducation() {
         
         container.appendChild(eduDiv);
     });
+
+    const professionalContainer = document.getElementById('professional');
+cvData.professional.forEach(prof => {
+    const profItem = document.createElement('div');
+    profItem.className = 'professional-item';
+    profItem.innerHTML = `
+        <div class="professional-title">${prof.qualification}</div>
+        ${prof.institution ? `<div class="institution">${prof.institution}</div>` : ''}
+        ${prof.date ? `<div class="professional-date">${prof.date}</div>` : ''}
+        ${prof.details ? `<div class="education-details">${prof.details}</div>` : ''}
+    `;
+    professionalContainer.appendChild(profItem);
+});
 }
 
 // Render References
