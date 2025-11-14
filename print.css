@@ -1,60 +1,124 @@
-* {
-  print-color-adjust: exact !important;
-  -webkit-print-color-adjust: exact !important;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  background: white !important;
-}
-
-@page {
-  size: A4;
-  margin: 1.5cm;
-}
-
-body {
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
-  font-size: 12pt;
-}
-
-header nav,
-footer,
-button,
-.print-hidden {
-  display: none !important;
-}
-
-.background-shapes,
-.hero-background,
-#animation {
-  display: none !important;
-}
-
-h1, h2, h3, h4 {
-  page-break-after: avoid;
-}
-
-p {
-  orphans: 3;
-  widows: 3;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  page-break-inside: avoid;
-}
-
-section {
-  page-break-inside: avoid;
-  margin-bottom: 12px;
-}
-
-a::after {
-  content: "";
+/* Print Styles */
+@media print {
+    /* Reset and general print settings */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+        background: white !important;
+        font-size: 11pt;
+        line-height: 1.4;
+    }
+    
+    /* Page setup */
+    @page {
+        size: A4;
+        margin: 1cm 1.5cm;
+    }
+    
+    /* Prevent page breaks inside elements */
+    .education-item,
+    .professional-item,
+    .experience-item,
+    .skills-section,
+    .header-section {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    
+    /* Preserve background colors and borders */
+    .education-item,
+    .professional-item {
+        background: #f9f9f9 !important;
+        border-left: 4px solid #2a5298 !important;
+        padding: 15px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* Typography adjustments for print */
+    h1 {
+        font-size: 24pt;
+        margin-bottom: 10pt;
+    }
+    
+    h2 {
+        font-size: 16pt;
+        margin-top: 15pt;
+        margin-bottom: 10pt;
+    }
+    
+    .degree-title,
+    .professional-title {
+        font-size: 13pt !important;
+        color: #1e3c72 !important;
+    }
+    
+    .education-date,
+    .professional-date {
+        font-size: 10pt !important;
+        color: #666 !important;
+    }
+    
+    .institution {
+        font-size: 11pt !important;
+        color: #555 !important;
+    }
+    
+    .education-details {
+        font-size: 10pt !important;
+        color: #666 !important;
+    }
+    
+    /* Hide web-only elements */
+    button,
+    .no-print,
+    nav,
+    .navbar {
+        display: none !important;
+    }
+    
+    /* Ensure links are visible but not underlined excessively */
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    a[href]:after {
+        content: none !important;
+    }
+    
+    /* Header styling */
+    .header-section {
+        text-align: center;
+        margin-bottom: 20pt;
+        border-bottom: 2px solid #2a5298;
+        padding-bottom: 10pt;
+    }
+    
+    /* Section spacing */
+    .education-section,
+    .professional-section {
+        margin-bottom: 25pt !important;
+    }
+    
+    .main-section-title {
+        color: #1e3c72 !important;
+        border-bottom: 2px solid #2a5298 !important;
+        padding-bottom: 8pt;
+        margin-bottom: 15pt !important;
+    }
+    
+    /* Skills and other list items */
+    ul {
+        margin: 10pt 0;
+        padding-left: 20pt;
+    }
+    
+    li {
+        margin-bottom: 5pt;
+    }
 }
