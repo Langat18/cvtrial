@@ -1,0 +1,60 @@
+* {
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: white !important;
+}
+
+@page {
+  size: A4;
+  margin: 1.5cm;
+}
+
+body {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  font-size: 12pt;
+}
+
+header nav,
+footer,
+button,
+.print-hidden {
+  display: none !important;
+}
+
+.background-shapes,
+.hero-background,
+#animation {
+  display: none !important;
+}
+
+h1, h2, h3, h4 {
+  page-break-after: avoid;
+}
+
+p {
+  orphans: 3;
+  widows: 3;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  page-break-inside: avoid;
+}
+
+section {
+  page-break-inside: avoid;
+  margin-bottom: 12px;
+}
+
+a::after {
+  content: "";
+}
