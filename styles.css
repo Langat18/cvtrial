@@ -1,0 +1,426 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    background: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 350px;
+    background: linear-gradient(135deg, #0449c9 0%, #3174e7 100%);
+    color: white;
+    padding: 40px 30px;
+}
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+.initials {
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+}
+
+.name {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.title {
+    font-size: 16px;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+.section-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-section,
+.competencies-section,
+.qualifications-section,
+.languages-section {
+    margin-bottom: 35px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.contact-item .icon {
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+/* Competency Bar */
+.competency {
+    margin-bottom: 20px;
+}
+
+.competency-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.competency-bar {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.competency-fill {
+    height: 100%;
+    background: #4CAF50;
+    border-radius: 4px;
+    transition: width 1s ease;
+}
+
+.qualification-list,
+.language-list {
+    list-style: none;
+}
+
+.qualification-list li,
+.language-list li {
+    padding: 8px 0;
+    font-size: 14px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.qualification-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    padding: 40px 50px;
+    background: white;
+}
+
+.main-section-title {
+    font-size: 26px;
+    color: #1e3c72;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #2b69d3;
+    font-weight: 600;
+}
+
+.profile-summary {
+    margin-bottom: 40px;
+}
+
+.profile-summary p {
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 15px;
+}
+
+.highlight {
+    background: #e3f2fd;
+    padding: 15px;
+    border-left: 4px solid #2a5298;
+    font-weight: 500;
+    color: #1e3c72;
+}
+
+/* Experience Section */
+.experience-section {
+    margin-bottom: 40px;
+}
+
+.job {
+    margin-bottom: 35px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.job:last-child {
+    border-bottom: none;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.job-title {
+    font-size: 20px;
+    color: #1e3c72;
+    font-weight: 600;
+}
+
+.job-date {
+    color: #666;
+    font-size: 14px;
+    background: #f5f5f5;
+    padding: 5px 12px;
+    border-radius: 4px;
+}
+
+.job-company {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.skill-tag {
+    background: #e3f2fd;
+    color: #1e3c72;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.achievements {
+    list-style: none;
+}
+
+.achievements li {
+    padding: 8px 0 8px 25px;
+    position: relative;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.achievements li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #2a5298;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Education Section */
+.education-section {
+    margin-bottom: 40px;
+}
+
+.education-item {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-left: 4px solid #2a5298;
+}
+
+.degree-title {
+    font-size: 18px;
+    color: #1e3c72;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.education-date {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.institution {
+    color: #555;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.education-details {
+    color: #666;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* Publication Section */
+.publication-section {
+    margin-bottom: 40px;
+}
+
+.publication {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #4CAF50;
+}
+
+.publication-title {
+    font-size: 18px;
+    color: #1e3c72;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.publication-authors {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.publication-journal {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.publication-description {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.publication-link {
+    color: #2a5298;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.publication-link:hover {
+    text-decoration: underline;
+}
+
+/* References Section */
+.references-section {
+    margin-bottom: 40px;
+}
+
+.references-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.reference {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border-top: 3px solid #2a5298;
+}
+
+.reference-name {
+    font-size: 17px;
+    color: #1e3c72;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.reference-position {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.reference-company {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.reference-contact {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .main-content {
+        padding: 30px 25px;
+    }
+
+    .job-header {
+        flex-direction: column;
+    }
+
+    .job-date {
+        margin-top: 5px;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+    }
+
+    .container {
+        box-shadow: none;
+        margin: 0;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .sidebar {
+        padding: 20px;
+    }
+}
